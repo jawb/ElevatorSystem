@@ -1,0 +1,77 @@
+{
+	"features" : [
+		"Elevator",
+		"DirectionControl",
+		"Environment",
+		"HallButton",
+		"CarButton",
+		"WeightSensor",
+		"PositionSensor",
+		"DoorControl",
+		"CarCallHandeling",
+		"CarCallRegistration",
+		"HallCallRegistration",
+		"StartControll",
+		"SpeedControl",
+		"RegistredFloorStop",
+		"LoadWeighingByPass",
+		"PositionControl",
+		"StopControl",
+		"AutoService"
+	],
+	"roles": {
+		"step": {
+			"Elevator": "step__wrappee__Elevator",
+			"DirectionControl": "step__wrappee__SpeedControl",
+			"SpeedControl": "step__wrappee__SpeedControl",
+			"RegistredFloorStop": "step__wrappee__PositionControl",
+			"PositionControl": "step__wrappee__PositionControl",
+			"StopControl": "step",
+			"FireFighterService": "step__wrappee__Elevator"
+		},
+		"enter": {
+			"CarButton": "enter__wrappee__CarButton",
+			"WeightSensor": "enter__wrappee__CarCallRegistration",
+			"CarCallRegistration": "enter__wrappee__CarCallRegistration",
+			"HallCallRegistration": "enter__wrappee__RegistredFloorStop",
+			"RegistredFloorStop": "enter__wrappee__RegistredFloorStop",
+			"LoadWeighingByPass": "enter"
+		},
+		"leave": {
+			"CarButton": "leave__wrappee__CarButton",
+			"WeightSensor": "leave__wrappee__RegistredFloorStop",
+			"RegistredFloorStop": "leave__wrappee__RegistredFloorStop",
+			"LoadWeighingByPass": "leave"
+		},
+		"canGo": {
+			"WeightSensor": "canGo__wrappee__WeightSensor",
+			"PositionSensor": "canGo__wrappee__SpeedControl",
+			"SpeedControl": "canGo__wrappee__SpeedControl",
+			"RegistredFloorStop": "canGo__wrappee__RegistredFloorStop",
+			"LoadWeighingByPass": "canGo__wrappee__PositionControl",
+			"PositionControl": "canGo__wrappee__PositionControl",
+			"StopControl": "canGo"
+		},
+		"beReady": {
+			"WeightSensor": "beReady__wrappee__WeightSensor",
+			"PositionSensor": "beReady__wrappee__LoadWeighingByPass",
+			"LoadWeighingByPass": "beReady__wrappee__LoadWeighingByPass",
+			"PositionControl": "beReady"
+		},
+		"canLift": {
+			"RegistredFloorStop": "canLift__wrappee__RegistredFloorStop",
+			"LoadWeighingByPass": "canLift"
+		},
+		"enterLeaveFloor": {
+			"FireFighterService": "enterLeaveFloor"
+		},
+		"isOkToGo": {
+			"FireFighterService": "isOkToGo"
+		},
+		"initUI": {
+			"StopControl": "initUI__wrappee__StopControl",
+			"FireFighterService": "initUI"
+		}
+	}
+
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="Elevator">
+				<alt abstract="true" mandatory="true" name="Service">
+					<feature mandatory="true" name="AutoService"/>
+					<feature mandatory="true" name="FireFighterService"/>
+				</alt>
+				<and mandatory="true" name="Environment">
+					<feature mandatory="true" name="HallButton"/>
+					<feature mandatory="true" name="CarButton"/>
+					<feature name="WeightSensor"/>
+					<feature mandatory="true" name="PositionSensor"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Operation">
+					<feature mandatory="true" name="DoorControl"/>
+					<and mandatory="true" name="CarCallHandeling">
+						<feature name="CarCallCancellation"/>
+						<feature mandatory="true" name="CarCallRegistration"/>
+					</and>
+					<feature mandatory="true" name="HallCallRegistration"/>
+					<and abstract="true" mandatory="true" name="RunControl">
+						<feature mandatory="true" name="DirectionControl"/>
+						<feature mandatory="true" name="StartControll"/>
+						<feature mandatory="true" name="SpeedControl"/>
+						<and mandatory="true" name="StopControl">
+							<feature mandatory="true" name="RegistredFloorStop"/>
+							<feature name="LoadWeighingByPass"/>
+						</and>
+						<feature mandatory="true" name="PositionControl"/>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>LoadWeighingByPass</var>
+					<var>WeightSensor</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="true">
+			<feature name="Elevator"/>
+			<feature name="DirectionControl"/>
+			<feature name="Environment"/>
+			<feature name="HallButton"/>
+			<feature name="CarButton"/>
+			<feature name="WeightSensor"/>
+			<feature name="PositionSensor"/>
+			<feature name="DoorControl"/>
+			<feature name="CarCallHandeling"/>
+			<feature name="CarCallCancellation"/>
+			<feature name="CarCallRegistration"/>
+			<feature name="HallCallRegistration"/>
+			<feature name="StartControll"/>
+			<feature name="SpeedControl"/>
+			<feature name="RegistredFloorStop"/>
+			<feature name="LoadWeighingByPass"/>
+			<feature name="PositionControl"/>
+			<feature name="StopControl"/>
+			<feature name="AutoService"/>
+			<feature name="FireFighterService"/>
+		</featureOrder>
+	</featureModel>
